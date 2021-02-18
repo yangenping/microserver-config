@@ -1,0 +1,24 @@
+server:
+  port: ${port:10086}
+
+spring:
+  application:
+    name: springcloud-server-center
+
+eureka:
+  instance:
+    hostname: ${hostname:localhost}
+
+  client:
+    register-with-eureka: false # 是否注册自己的信息到EurekaServer，默认是true
+    fetch-registry: false # 是否拉取其它服务的信息，默认是true
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: ${defaultZone:http://localhost:8088/eureka}
+  server:
+    #剔除服务端
+    eviction-interval-timer-in-ms: 60000
+    #关闭自我保护
+    enable-self-preservation: false
+
+
+
