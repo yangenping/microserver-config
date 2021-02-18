@@ -7,10 +7,8 @@ spring:
   profiles: dev
   application:
     name: microservice-config-client-dev
-    abc:ddd
 ---
 spring:
   profiles: test
   application:
     name: microservice-config-client-test
-    abc:aaa
